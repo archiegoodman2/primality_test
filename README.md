@@ -14,3 +14,6 @@ To test this, try inputting 0, 1, 2 as well as one known prime and non-prime for
   2. a very large positive number - to test performance
 
 The idea for this came from a kata on CodeWars.
+
+
+To improve next time: perhaps use bitwise operators to improve speed, and check use of random function to make it more cryptograpphically secure. consider other libraries to import that may contain rand int generator.
