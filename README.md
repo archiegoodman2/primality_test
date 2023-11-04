@@ -14,3 +14,5 @@ To test this, try inputting 0, 1, 2 as well as one known prime and non-prime for
   2. a negative number below 10
   3. a very large positive number - to test performance
   4. a negative numebr greatly below zero
+
+The idea for this came from a kata on CodeWars.
