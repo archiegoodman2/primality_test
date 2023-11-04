@@ -1,0 +1,88 @@
+using System;
+using System.Numerics;
+
+//this code was created by taking the idea from a Python tutorial (See Readme) and converting to C#. Due to some missing libraries from Python, and 
+class Programme
+{
+    private static Random random = new Random();
+  //define our random 
+    private static bool SingleTest(BigInteger n, BigInteger a)
+    {
+        BigInteger exp = n - 1;
+        //exp is the exponent in our miller rabin function's sequence - see the tutorial
+        while (exp.IsEven)
+        {
+            exp >>= 1;
+          //this shifts the bits of the variable value, which is the same as doubling the variable's value, but more computationally efficient.
+        }
+
+        BigInteger result = BigInteger.ModPow(a, exp, n);
+
+        if (result == 1 || result == n - 1)
+        {
+            return true;
+        }
+
+        while (exp < n - 1)
+        {
+            result = BigInteger.ModPow(a, exp, n);
+            //so in python we just use the pow() operator but here we have to use the BigInteger class that we imported earlier, to handle large integers.
+            if (result == n - 1)
+            {
+                return true;
+            }
+
+            if (result == 1)
+            {
+                return false;
+            }
+
+            exp <<= 1;
+        }
+
+        return false;
+    }
+
+    public static bool IsPrime(BigInteger n, int k = 40)
+    {
+        if (n <= 1)
+        {
+            return false;
+        }
+        if (n <= 3)
+        {
+            //three is kind of an edge case so we have to hardcode that in
+            return true;
+        }
+        if (n.IsEven)
+        {
+            //could potentially make this more efficient with bitwise operators 
+            return false;
+        }
+
+        for (int i = 0; i < k; i++)
+        {
+            BigInteger a = BigInteger.Parse(random.Next(2, (int)(n - 2)).ToString());
+            if (!SingleTest(n, a))     //if the output from this function equals false. in python we just use 'if not funct()'
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    //quick test on a large number. can also test edge cases too
+    static void Main()
+    {
+        BigInteger numberToTest = BigInteger.Parse("104729"); // Replace with your number
+        if (IsPrime(numberToTest))
+        {
+            Console.WriteLine(numberToTest + " is prime.");
+        }
+        else
+        {
+            Console.WriteLine(numberToTest + " is not prime.");
+        }
+    }
+}
