@@ -8,10 +8,9 @@ Will not include a full read-me because this is a short function in C# that does
 **The idea for this was inspired by the tutorial:** https://youtu.be/-BWTS_1Nxao?si=F4MIpK2uZgEzi0pK   The mathematics of a Mille Rabin test can be found on this video.
 However, this was heavily modified as his tutorial was in Python, and the two languages do not work exactly the same. 
 
-**Edge cases:** 
-0, 1 2 and perhaps 3.
+**Testing** 
+Edge cases are pretty much 0, 1 2 and perhaps 3.
 
-**Testing: **
 To test this, try inputting 0, 1, 2 as well as one known prime and non-prime for each of these categories:
   1. a number below 10
   2. a very large positive number - to test performance
