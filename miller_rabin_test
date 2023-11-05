@@ -1,7 +1,7 @@
 using System;
 using System.Numerics;
 
-//this code was created by taking the idea from a Python tutorial (See Readme) and converting to C#. Due to some missing libraries from Python, and 
+
 class Programme
 {
     private static Random random = new Random();
