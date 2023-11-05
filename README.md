@@ -21,8 +21,11 @@ The idea for this came from a kata on CodeWars.
 
 **To improve next time**: perhaps use more bitwise operators to improve speed, and check use of random function to make it more cryptograpphically secure. consider other libraries to import that may contain rand int generator. time-efficiency analysis also required.
 
-According to ChatGPT, we could use this logic instead for the first method:
-"BigInteger nMinus1 = n - 1;
+According to ChatGPT, we could use this bit manipulation logic, instead, for the first method:
+
+private static bool SingleTest(BigInteger n, BigInteger a)
+    {
+        BigInteger nMinus1 = n - 1;
         BigInteger exp = nMinus1;
         int trailingZeros = 0;
 
@@ -32,6 +35,6 @@ According to ChatGPT, we could use this logic instead for the first method:
             exp >>= 1;
             trailingZeros++;
         }
-        " 
+  ...
 
 So I will look into what trailing zeroes are. 
