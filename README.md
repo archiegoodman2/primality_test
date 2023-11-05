@@ -5,8 +5,7 @@ The functions works probabilistically so it will not have 100% accuracy - it sac
 
 Will not include a full read-me because this is a short function in C# that doesn't use any libraries, frameworks or other files. Can just be ran in any IDE with .NET set up. 
 
-**The idea for this was inspired by the tutorial:** https://youtu.be/-BWTS_1Nxao?si=F4MIpK2uZgEzi0pK   The mathematics of a Mille Rabin test can be found on this video.
-However, this was heavily modified as his tutorial was in Python, and the two languages do not work exactly the same. 
+ The mathematics of a Mille Rabin test can be found on the wikipedia page. 
 
 **Testing** 
 Edge cases are pretty much 0, 1 2 and perhaps 3.
